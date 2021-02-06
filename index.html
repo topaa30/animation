@@ -1,88 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Animation</title>
+    <title>Advanced CSS - Assignment 1</title>
     <style>
-        .div1{
-            position: relative;
-            width: 600px;
-            height: 400px;
-            margin: 50px auto;
-            background-color: #050210;
-        }
-        .div1::before{
-            position: absolute;
-            content: '';
-            width: 300px;
-            height: 300px;
-            margin: 50px 150px;
-            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
-            border-radius: 100%;
-            animation: animation 1s infinite linear;
-        }
-        .div1::after{
-            position: absolute;
-            content: '';
-            width: 10px;
-            height: 10px;
-            margin: 195px 295px;
-            background-color:  #1b123b;
-            border-radius: 100%;
-            animation-name: anim1;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-        }
-        .div2{
-            position: absolute;
-            content: '';
-            width: 270px;
-            height: 270px;
-            margin: 50px 150px;
-            background: linear-gradient(#fb5dad, #55fb9f, #b97aff);
-            border-radius: 100%;
-            filter: blur(50px);
-            animation-name: animation;
-            animation-duration: 1s;
-            animation-iteration-count: infinite;
-        }
-        .div3{
-            position: absolute;
-            content: '';
-            width: 250px;
-            height: 250px;
-            margin: 75px 175px;
-            background-color: #050210;
-            border-radius: 100%;
-        }
 
-        @keyframes anim {
-            0%{
-                transform: rotate(0deg);
-            }
-        
-            100%{
-                transform: rotate(360deg);
-            }
-        }
-        @keyframes anim1{
-            0%{
-                transform: scale(2,2);
-            }
-            60%{
-                transform: scale(24,24);
-            }
-            100%{
-                transform: scale(24,24);
-                background-color: transparent;
-            }
-         }      
+    a[href^="https://www.google.com/"] {
+        color: green;
+    }
+
+    a[href^="https://www.link-group.eu/"] {
+        color: red;
+    }
+
+    #second-div p:nth-child(2n) {
+        color: red;
+    }
+
+    #second-div p:nth-child(2n+1) {
+        color: blue;
+    }
+
+    p:nth-child(8):hover {
+        font-style: italic;
+    }
+
+    #first-div>p::after {
+        content: ' -New';
+        color: yellow;
+    }
+    
+
+
     </style>
 </head>
+
 <body>
-    <div class="div1">
-        <div class="div2"></div>
-        <div class="div3"></div>
+    <h1>Main Heading</h1>
+    <p>Paragraph 1</p>
+    <a href="https://www.google.com/">Google</a>
+    <a href="https://www.google.com/doodles">Google Doodles</a>
+    <a href="https://www.link-group.eu/" target="_blank">Goto Link Group</a>
+    <div id="first-div">
+        <h2>Subheading</h2>
+        <p>Paragraph 2</p>
+        <p>Paragraph 3</p>
+        <div id="second-div">
+            <h3>Sub subheading</h3>
+            <p>Paragraph 4</p>
+            <p>Paragraph 5</p>
+            <p>Paragraph 6</p>
+            <p>Paragraph 7</p>
+            <p>Paragraph 8</p>
+        </div>
     </div>
+    <p>Paragraph 9</p>
+    <p>Paragraph 10</p>
 </body>
+
 </html>

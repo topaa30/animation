@@ -1,62 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <title>Advanced CSS - Assignment 1</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Gallery</title>
     <style>
-
-    a[href^="https://www.google.com/"] {
-        color: green;
-    }
-
-    a[href^="https://www.link-group.eu/"] {
-        color: red;
-    }
-
-    #second-div p:nth-child(2n) {
-        color: red;
-    }
-
-    #second-div p:nth-child(2n+1) {
-        color: blue;
-    }
-
-    p:nth-child(8):hover {
-        font-style: italic;
-    }
-
-    #first-div>p::after {
-        content: ' -New';
-        color: yellow;
-    }
-    
-
-
+        body{
+            max-width: 960px;
+        }
+        #container{
+            display: grid;
+            max-width: 1024px;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+        #box{
+            display: grid;
+            grid-template-rows: 5fr 1fr;
+            background-color: aquamarine;
+            width: 150px;
+            height: 120px;
+            border-radius: 10px;
+        }
+        #text{
+            display: grid;
+            background-color: ivory;
+            height: 20px;
+            width: 150px;
+            justify-items: center;
+        }
+        @media screen and (max-width: 1024px) {
+            #container{
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+        @media screen and (max-width: 768px) {
+            #container{
+                grid-template-columns: repeat(3, 1fr);
+                max-width: 768px;
+            }
+        }
+        @media screen and (max-width: 414px) {
+            #container{
+                grid-template-columns: repeat(1, 1fr);
+                max-width: 414px;
+                justify-items: center;
+            }
+            h1{
+                text-align: center;
+                margin: 25px auto;
+            }
+        }
     </style>
 </head>
-
 <body>
-    <h1>Main Heading</h1>
-    <p>Paragraph 1</p>
-    <a href="https://www.google.com/">Google</a>
-    <a href="https://www.google.com/doodles">Google Doodles</a>
-    <a href="https://www.link-group.eu/" target="_blank">Goto Link Group</a>
-    <div id="first-div">
-        <h2>Subheading</h2>
-        <p>Paragraph 2</p>
-        <p>Paragraph 3</p>
-        <div id="second-div">
-            <h3>Sub subheading</h3>
-            <p>Paragraph 4</p>
-            <p>Paragraph 5</p>
-            <p>Paragraph 6</p>
-            <p>Paragraph 7</p>
-            <p>Paragraph 8</p>
-        </div>
+    <h1>Gallery Heading</h1>
+    <div id="container">
+        <div id="box"><img src="placeholder-image.png" width="150px" height="100px">
+            <div id="text">Image title</div></div>
+        <div id="box"><img src="placeholder-image.png" width="150px" height="100px">
+            <div id="text">Image title</div></div>
+        <div id="box"><img src="placeholder-image.png" width="150px" height="100px">
+            <div id="text">Image title</div></div>
+        <div id="box"><img src="placeholder-image.png" width="150px" height="100px">
+            <div id="text">Image title</div></div>
+        <div id="box"><img src="placeholder-image.png" width="150px" height="100px">
+            <div id="text">Image title</div></div>
+        <div id="box"><img src="placeholder-image.png" width="150px" height="100px">
+            <div id="text">Image title</div></div>
+        <div id="box"><img src="placeholder-image.png" width="150px" height="100px">
+            <div id="text">Image title</div></div>
+        <div id="box"><img src="placeholder-image.png" width="150px" height="100px">
+            <div id="text">Image title</div></div>
+        <div id="box"><img src="placeholder-image.png" width="150px" height="100px">
+            <div id="text">Image title</div></div>
+        <div id="box"><img src="placeholder-image.png" width="150px" height="100px">
+            <div id="text">Image title</div></div>
     </div>
-    <p>Paragraph 9</p>
-    <p>Paragraph 10</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore mollitia error, iste recusandae,
+       officia maxime itaque est, minima nulla quasi id? Deleniti fuga et eos ipsa aperiam iusto labore nesciunt!</p>
 </body>
-
 </html>
